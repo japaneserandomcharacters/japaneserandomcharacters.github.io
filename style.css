@@ -3,6 +3,11 @@ body {
     font-family: Verdana;    
 }
 
+a {
+    color: #0A826E;
+    text-decoration: none;
+}
+
 #content {
     background-color: #EBFFF1;
     border-radius: 7px;
