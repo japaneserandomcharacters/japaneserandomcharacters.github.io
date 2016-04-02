@@ -784,7 +784,7 @@ function generateRandomHiraganaAndKatakanaAndKanjiList( listLength )
     
     for ( counter = 0 ; counter < lengthOfRandomKatakanaList ; ++counter )
     {
-        randomHiraganaAndKatakanaAndKanjiList.push( randomKanjiList[ counter ] );
+        randomHiraganaAndKatakanaAndKanjiList.push( randomKatakanaList[ counter ] );
     }
     
     for ( counter = 0 ; counter < lengthOfRandomKanjiList ; ++counter )
