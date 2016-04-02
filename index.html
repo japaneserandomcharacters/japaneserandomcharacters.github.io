@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     
-    <body onload="start;">
+    <body>
         <div id="content">
             <h1>Japanese Random Characters</h1>
             <div id="list">
@@ -30,6 +30,7 @@
                 <p> Select symbol sets to be used:<p/>
                 <p>Hiragana: <select id="hiragana"><option value="yes" selected>Yes</option><option value="no">No</option></select></p>
                 <p>Katakana: <select id="katakana"><option value="yes" selected>Yes</option><option value="no">No</option></select></p>
+                <p>Kanji: <select id="kanji"><option value="yes" selected>Yes</option><option value="no">No</option></select></p>
                 <input type="button" id="submit_button" value="Go!" onclick="generateResults(); return false;">
                 <label id="output"></label>
             </form>
