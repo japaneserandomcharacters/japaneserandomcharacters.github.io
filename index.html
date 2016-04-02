@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    
+<html lang="en">
+    <head>
+        <title>Japanese Random Characters</title>
+        <script type="text/javascript" src="code.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    
+    <body onload="start;">
+        <div id="content">
+            <h1>Japanese Random Characters</h1>
+            <div id="list">
+                <ul>
+                <li> Currently supporting:
+                    <ul>
+                        <li>Hiragana.</li>
+                        <li>Katakana</li>
+                    </ul>
+                </li>
+                <li>Kanji will be added soon.</li>
+                <li>In the (distant) future, funcionality to export the output to PDF might me added.</li>
+            </ul>
+            </div>
+            <form action="" id="options">
+                <p>List length: <input type="number" id="length"></p>
+                <p> Select symbol sets to be used:<p/>
+                <p>Hiragana: <select id="hiragana"><option value="yes" selected>Yes</option><option value="no">No</option></select></p>
+                <p>Katakana: <select id="katakana"><option value="yes" selected>Yes</option><option value="no">No</option></select></p>
+                <input type="button" id="submit_button" value="Go!" onclick="generateResults(); return false;">
+                <label id="output"></label>
+            </form>
+        </div>
+    </body>
+</html>
