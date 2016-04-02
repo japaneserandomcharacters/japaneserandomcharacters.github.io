@@ -458,7 +458,7 @@ function generateResults()
     document.getElementById( "output" ).style.display = "block";
     
     var outputObject = document.getElementById( "output" );
-    var length = document.getElementById( "length" ).value;
+    var length = parseInt( document.getElementById( "length" ).value );
     
     if ( hiraganaChoice === "no" && katakanaChoice === "no" && kanjiChoice === "no" )
     {
@@ -589,6 +589,26 @@ function generateResults()
             outputObject.innerHTML += "</p>";
         }
     }
+    else
+    {
+        if ( length <= 0 )
+        {
+            outputObject.innerHTML = "<p>Please select a positive length for the list.</p>";
+        }
+        else
+        {
+            var list = generateRandomHiraganaAndKatakanaAndKanjiList( length );
+            
+            outputObject.innerHTML = "<p>";
+            
+            for ( var symbolCounter = 1 ; symbolCounter <=  length ; ++symbolCounter )
+            {
+                outputObject.innerHTML += list[ symbolCounter - 1 ] + " ";
+            }
+            
+            outputObject.innerHTML += "</p>";
+        }
+    }
 }
 
 function generateRandomHiraganaList( listLength )
@@ -688,4 +708,89 @@ function generateRandomKatakanaAndKanjiList( listLength )
     }
     
     return randomKatakanaAndKanjiList;
+}
+
+function generateRandomHiraganaAndKatakanaAndKanjiList( listLength )
+{
+    var counter;
+    var lengthOfRandomHiraganaList;
+    var lengthOfRandomKatakanaList;
+    var lengthOfRandomKanjiList;
+    var randomHiraganaList;
+    var randomKatakanaList;
+    var randomKanjiList;
+    var randomHiraganaAndKatakanaAndKanjiList = new Array();
+    
+    if ( listLength === 1 )
+    {
+        var temp = new Array( "001",
+                              "010",
+                              "100" );
+        var randomEntry = temp[ Math.floor( Math.random() * 3 ) ];
+        
+        lengthOfRandomHiraganaList = parseInt( randomEntry.charAt( 0 ) );
+        lengthOfRandomKatakanaList = parseInt( randomEntry.charAt( 1 ) );
+        lengthOfRandomKanjiList = parseInt( randomEntry.charAt( 2 ) );
+    }
+    else if ( listLength === 2 )
+    {
+        var temp = new Array( "011",
+                              "101",
+                              "110" );
+        var randomEntry = temp[ Math.floor( Math.random() * 3 ) ];
+        
+        lengthOfRandomHiraganaList = parseInt( randomEntry.charAt( 0 ) );
+        lengthOfRandomKatakanaList = parseInt( randomEntry.charAt( 1 ) );
+        lengthOfRandomKanjiList = parseInt( randomEntry.charAt( 2 ) );
+    }
+    else
+    {
+        if ( listLength % 3 == 0 )
+        {
+            lengthOfRandomHiraganaList = lengthOfRandomKatakanaList = lengthOfRandomKanjiList = listLength / 3;
+        }
+        else if ( ( listLength - 1 ) % 3 == 0 )
+        {
+            var temp = new Array( "001",
+                                  "010",
+                                  "100" );
+            var randomEntry = temp[ Math.floor( Math.random() * 3 ) ];
+            
+            lengthOfRandomHiraganaList = parseInt( randomEntry.charAt( 0 ) ) + Math.floor( listLength / 3 );
+            lengthOfRandomKatakanaList = parseInt( randomEntry.charAt( 1 ) ) + Math.floor( listLength / 3 );
+            lengthOfRandomKanjiList = parseInt( randomEntry.charAt( 2 ) ) + Math.floor( listLength / 3 );
+        }
+        else
+        {
+            var temp = new Array( "011",
+                                  "101",
+                                  "110" );
+            var randomEntry = temp[ Math.floor( Math.random() * 3 ) ];
+        
+            lengthOfRandomHiraganaList = parseInt( randomEntry.charAt( 0 ) ) + Math.floor( listLength / 3 );
+            lengthOfRandomKatakanaList = parseInt( randomEntry.charAt( 1 ) ) + Math.floor( listLength / 3 );
+            lengthOfRandomKanjiList = parseInt( randomEntry.charAt( 2 ) ) + Math.floor( listLength / 3 );
+        }
+    }
+    
+    randomHiraganaList = generateRandomHiraganaList( lengthOfRandomHiraganaList );
+    randomKatakanaList = generateRandomKatakanaList( lengthOfRandomKatakanaList );
+    randomKanjiList = generateRandomKanjiList( lengthOfRandomKanjiList );
+    
+    for ( counter = 0 ; counter < lengthOfRandomHiraganaList ; ++counter )
+    {
+        randomHiraganaAndKatakanaAndKanjiList.push( randomHiraganaList[ counter ] );
+    }
+    
+    for ( counter = 0 ; counter < lengthOfRandomKatakanaList ; ++counter )
+    {
+        randomHiraganaAndKatakanaAndKanjiList.push( randomKanjiList[ counter ] );
+    }
+    
+    for ( counter = 0 ; counter < lengthOfRandomKanjiList ; ++counter )
+    {
+        randomHiraganaAndKatakanaAndKanjiList.push( randomKanjiList[ counter ] );
+    }
+    
+    return randomHiraganaAndKatakanaAndKanjiList;
 }
