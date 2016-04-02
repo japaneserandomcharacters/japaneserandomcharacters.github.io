@@ -549,6 +549,26 @@ function generateResults()
             outputObject.innerHTML += "</p>";
         }
     }
+    else if ( hiraganaChoice === "yes" && katakanaChoice === "no" && kanjiChoice === "yes" )
+    {
+        if ( length <= 0 )
+        {
+            outputObject.innerHTML = "<p>Please select a positive length for the list.</p>";
+        }
+        else
+        {
+            var list = generateRandomHiraganaAndKanjiList( length );
+            
+            outputObject.innerHTML = "<p>";
+            
+            for ( var symbolCounter = 1 ; symbolCounter <=  length ; ++symbolCounter )
+            {
+                outputObject.innerHTML += list[ symbolCounter - 1 ] + " ";
+            }
+            
+            outputObject.innerHTML += "</p>";
+        }
+    }
 }
 
 function generateRandomHiraganaList( listLength )
@@ -608,4 +628,24 @@ function generateRandomHiraganaAndKatakanaList( listLength )
     }
     
     return randomHiraganaAndKatakanaList;
+}
+
+function generateRandomHiraganaAndKanjiList( listLength )
+{
+    var counter;
+    var randomHiraganaList = generateRandomHiraganaList( Math.ceil( listLength / 2 ) );
+    var randomKanjiList = generateRandomKanjiList( Math.floor( listLength / 2 ) );
+    var randomHiraganaAndKanjiList = new Array();
+    
+    for ( counter = 0 ; counter < randomHiraganaList.length ; ++counter )
+    {
+        randomHiraganaAndKanjiList.push( randomHiraganaList[ counter ] );
+    }
+    
+    for ( counter = 0 ; counter < randomKatakanaList.length ; ++counter )
+    {
+        randomHiraganaAndKanjiList.push( randomKanjiList[ counter ] );
+    }
+    
+    return randomHiraganaAndKanjiList;
 }
