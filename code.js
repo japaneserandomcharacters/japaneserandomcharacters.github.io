@@ -39,14 +39,14 @@ function generateResults()
     {
         outputObject.innerHTML = "<p>Please select a symbol set.</p>";
         
-        if ( lengthObject.value < 0 )
+        if ( lengthObject < 0 )
         {
             outputObject.innerHTML = "<p>Please select a nonnegative length for the list.</p>";
         }
     }
     else if ( hiraganaChoice === "yes" && katakanaChoice === "no" )
     {
-        if ( length.value < 0 )
+        if ( length < 0 )
         {
             outputObject.innerHTML = "<p>Please select a nonnegative length for the list.</p>";
         }
@@ -66,7 +66,7 @@ function generateResults()
     }
     else if ( hiraganaChoice === "no" && katakanaChoice === "yes" )
     {
-        if ( length.value < 0 )
+        if ( length < 0 )
         {
             outputObject.innerHTML = "<p>Please select a nonnegative length for the list.</p>";
         }
@@ -86,7 +86,7 @@ function generateResults()
     }
     else if ( hiraganaChoice === "yes" && katakanaChoice === "yes" )
     {
-        if ( length.value < 0 )
+        if ( length < 0 )
         {
             outputObject.innerHTML = "<p>Please select a nonnegative length for the list.</p>";
         }
