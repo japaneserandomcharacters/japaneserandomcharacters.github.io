@@ -1,0 +1,1 @@
+# japaneserandomcharacters.github.io
