@@ -742,17 +742,14 @@ function generateRandomHiraganaAndKatakanaAndKanjiList( listLength )
         lengthOfRandomHiraganaList = parseInt( randomEntry.charAt( 0 ) );
         lengthOfRandomKatakanaList = parseInt( randomEntry.charAt( 1 ) );
         lengthOfRandomKanjiList = parseInt( randomEntry.charAt( 2 ) );
-        
-        window.alert( "lengthOfRandomHiraganaList is " + lengthOfRandomHiraganaList + "\nlengthOfRandomKatakanaList is " + lengthOfRandomKatakanaList +
-            "\nlengthOfRandomKanjiList is " + lengthOfRandomKanjiList );
     }
     else
     {
-        if ( listLength % 3 == 0 )
+        if ( listLength % 3 === 0 )
         {
             lengthOfRandomHiraganaList = lengthOfRandomKatakanaList = lengthOfRandomKanjiList = listLength / 3;
         }
-        else if ( ( listLength - 1 ) % 3 == 0 )
+        else if ( ( listLength - 1 ) % 3 === 0 )
         {
             var temp = new Array( "001",
                                   "010",
