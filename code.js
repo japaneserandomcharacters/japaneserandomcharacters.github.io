@@ -39,7 +39,7 @@ function generateResults()
     {
         outputObject.innerHTML = "<p>Please select a symbol set.</p>";
         
-        if ( lengthObject <= 0 )
+        if ( length <= 0 )
         {
             outputObject.innerHTML = "<p>Please select a positive length for the list.</p>";
         }
