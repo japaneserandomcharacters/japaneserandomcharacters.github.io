@@ -41,7 +41,7 @@ function generateResults()
         
         if ( length <= 0 )
         {
-            outputObject.innerHTML = "<p>Please select a positive length for the list.</p>";
+            outputObject.innerHTML += "<p>Please select a positive length for the list.</p>";
         }
     }
     else if ( hiraganaChoice === "yes" && katakanaChoice === "no" )
