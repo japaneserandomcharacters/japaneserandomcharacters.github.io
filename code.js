@@ -642,7 +642,7 @@ function generateRandomHiraganaAndKanjiList( listLength )
         randomHiraganaAndKanjiList.push( randomHiraganaList[ counter ] );
     }
     
-    for ( counter = 0 ; counter < randomKatakanaList.length ; ++counter )
+    for ( counter = 0 ; counter < randomKanjiList.length ; ++counter )
     {
         randomHiraganaAndKanjiList.push( randomKanjiList[ counter ] );
     }
