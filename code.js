@@ -742,6 +742,9 @@ function generateRandomHiraganaAndKatakanaAndKanjiList( listLength )
         lengthOfRandomHiraganaList = parseInt( randomEntry.charAt( 0 ) );
         lengthOfRandomKatakanaList = parseInt( randomEntry.charAt( 1 ) );
         lengthOfRandomKanjiList = parseInt( randomEntry.charAt( 2 ) );
+        
+        window.alert( "lengthOfRandomHiraganaList is " + lengthOfRandomHiraganaList + "\nlengthOfRandomKatakanaList is " + lengthOfRandomKatakanaList +
+            "\nlengthOfRandomKanjiList is " + lengthOfRandomKanjiList );
     }
     else
     {
